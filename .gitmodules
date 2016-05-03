@@ -1,0 +1,9 @@
+[submodule "robopatrol-server"]
+	path = robopatrol-server
+	url = https://github.com/robopatrol/robopatrol-server.git
+[submodule "robopatrol"]
+	path = robopatrol
+	url = https://github.com/robopatrol/robopatrol.git
+[submodule "robopatrol-webapp"]
+	path = robopatrol-webapp
+	url = https://github.com/robopatrol/robopatrol-webapp.git

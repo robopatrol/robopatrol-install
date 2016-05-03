@@ -1,0 +1,47 @@
+version: '2'
+
+services:
+
+  robopatrol:
+    labels:
+      ch.zhaw.description: "Launch robopatrol on a Turtlebot."
+    image: robopatrol/webapp
+    links:
+      - ros-turtlebot:ros
+      - server
+    ports:
+    - "9090:80"
+
+  robopatrol-simulation:
+    labels:
+      ch.zhaw.description: "Run robopatrol on a simulated Turtlebot."
+    image: robopatrol/webapp
+    links:
+      - ros-simulation:ros
+      - server
+    ports:
+    - "9090:80"
+
+# robopatrol-server (REST)
+  server:
+    image: robopatrol/server
+    ports:
+      - "9998:80"
+
+# robopatrol (ROS Bridge)
+  ros-turtlebot:
+    image: robopatrol/ros
+    container_name: robopatrol 
+    command: "/bin/bash -c 'source ./devel/setup.bash && roslaunch robopatrol turtlebot.launch'"
+    ports:
+      - "9090:9090"
+      - "11345:11345"
+
+# robopatrol (ROS Bridge, Gazebo)
+  ros-simulation:
+    image: robopatrol/ros
+    container_name: robopatrol
+    ports:
+      - "9090:9090"
+      - "11311:11311"
+      - "11345:11345"
