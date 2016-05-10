@@ -10,7 +10,7 @@ services:
       - ros-turtlebot:ros
       - server
     ports:
-    - "9090:80"
+    - "9090:9090"
 
   robopatrol-simulation:
     labels:
@@ -20,17 +20,18 @@ services:
       - ros-simulation:ros
       - server
     ports:
-    - "9090:80"
+    - "9090:9090"
 
 # robopatrol-server (REST)
   server:
     image: robopatrol/server
+    container_name: robopatrol-server
     ports:
-      - "9998:80"
+      - "9998:9998"
 
 # robopatrol (ROS Bridge)
   ros-turtlebot:
-    image: robopatrol/ros
+    image: robopatrol/robopatrol
     container_name: robopatrol 
     command: "/bin/bash -c 'source ./devel/setup.bash && roslaunch robopatrol turtlebot.launch'"
     ports:
@@ -39,7 +40,7 @@ services:
 
 # robopatrol (ROS Bridge, Gazebo)
   ros-simulation:
-    image: robopatrol/ros
+    image: robopatrol/robopatrol
     container_name: robopatrol
     ports:
       - "9090:9090"

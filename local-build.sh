@@ -13,11 +13,9 @@ pushd robopatrol
 popd
 
 pushd robopatrol-server
-    ./gradlew assemble
     docker build -t robopatrol/server .
 popd
 
-# TODO webapp
-#pushd robopatrol-webapp
-#   docker build -t robopatrol/webapp .
-#popd
+pushd robopatrol-webapp
+   docker build -t robopatrol/webapp .
+popd
