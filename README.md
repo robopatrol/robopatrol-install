@@ -4,15 +4,14 @@
 
 - Connect to the Internet
 - Install [Docker Compose](https://docs.docker.com/compose/install/)
-- Download the [Robopatrol Installer](https://github.com/robopatrol/robopatrol-install/archive/master.zip)
 
 ## Install and Launch Robopatrol
 
-- Download the installer and unzip it
-  - `curl -L 'https://github.com/robopatrol/robopatrol-install/archive/master.zip' > robopatrol-install.zip`
-  - `unzip robopatrol-install.zip -d .`
-  - `cd robopatrol-install*`
-- Download Robopatrol components (This might take a while)
+1. Download the installer and unzip it
+   1. `curl -L 'https://github.com/robopatrol/robopatrol-install/archive/master.zip' > robopatrol-install.zip`
+   2. `unzip robopatrol-install.zip -d .`
+   3. `cd robopatrol-install*`
+2. Download Robopatrol components (This might take a while)
   - `docker-compose pull`
 
 ### Launch on Bot
