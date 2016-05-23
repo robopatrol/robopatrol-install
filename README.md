@@ -23,7 +23,7 @@ docker-compose up robopatrol
 ### Launch Simulation
 
 ```shell
-docker-compose up robopatrol-Simulation
+docker-compose up robopatrol-simulation
 ```
 
 ### Stop Robopatrol
